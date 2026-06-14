@@ -12,11 +12,10 @@ app.get("/", (req, res) => {
     env: env,
     message: "",
   };
-  if (env === "development") {
-    returnObj.env = "development";
-    returnObj.message = "ENV can be read";
+  if (env && env.length > 0) {
+    returnObj.env = env;
+    returnObj.message = `ENV can be read: ${env}`;
   } else {
-    returnObj.env = "doomed";
     returnObj.message = "ENV cannot be read";
   }
   res.json(returnObj);
