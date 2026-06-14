@@ -8,6 +8,7 @@ const app = express();
 const env = process.env.ENV;
 
 app.get("/", (req, res) => {
+  console.log("request came in");
   let returnObj = {
     env: env,
     message: "",
